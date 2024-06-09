@@ -4,6 +4,8 @@
  */
 package main.java.entities.GUI;
 
+import main.java.utils.Muda;
+
 /**
  *
  * @author Natal
@@ -145,17 +147,6 @@ public class Criar extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Segoe UI Black", 2, 18)); // NOI18N
         jLabel3.setText("Nome");
 
-        jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPasswordField1ActionPerformed(evt);
-            }
-        });
-
-        jPasswordField2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPasswordField2ActionPerformed(evt);
-            }
-        });
 
         jLabel4.setFont(new java.awt.Font("Segoe UI Black", 2, 18)); // NOI18N
         jLabel4.setText("Confirmar");
@@ -172,21 +163,13 @@ public class Criar extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Segoe UI Black", 2, 18)); // NOI18N
         jLabel8.setText("CEP");
 
-        jTextField6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField6ActionPerformed(evt);
-            }
-        });
+       
 
         jLabel9.setFont(new java.awt.Font("Segoe UI Black", 2, 18)); // NOI18N
         jLabel9.setText("Rua");
 
         jTextField8.setEnabled(false);
-        jTextField8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField8ActionPerformed(evt);
-            }
-        });
+    
 
         jLabel10.setFont(new java.awt.Font("Segoe UI Black", 2, 18)); // NOI18N
         jLabel10.setText("N°");
@@ -315,24 +298,10 @@ public class Criar extends javax.swing.JFrame {
     }// </editor-fold>                        
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        // TODO add your handling code here:
+        Muda muda = new Muda();
+        muda.vola();
     }                                        
-
-    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {                                                
-        // TODO add your handling code here:
-    }                                               
-
-    private void jPasswordField2ActionPerformed(java.awt.event.ActionEvent evt) {                                                
-        // TODO add your handling code here:
-    }                                               
-
-    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {                                            
-        // TODO add your handling code here:
-    }                                           
-
-    private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {                                            
-        // TODO add your handling code here:
-    }                                           
+                                   
 
     /**
      * @param args the command line arguments

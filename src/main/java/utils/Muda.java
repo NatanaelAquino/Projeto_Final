@@ -11,6 +11,9 @@ public class Muda {
         App.DescarteNovo.setVisible(false);
         App.DesempenhoNovo.setVisible(false);
         App.Editar.setVisible(false);
+        App.menu.preencherDados();
+        App.menu.preencherTabela();
+
 
     }
     public void Home(){
@@ -19,6 +22,8 @@ public class Muda {
         App.DescarteNovo.setVisible(false);
         App.DesempenhoNovo.setVisible(false);
         App.Editar.setVisible(false);
+        App.menu.preencherDados();
+        App.menu.preencherTabela();
 
     }
     public void desempenho(){
@@ -27,6 +32,8 @@ public class Muda {
         App.DescarteNovo.setVisible(false);
         App.DesempenhoNovo.setVisible(true);
         App.Editar.setVisible(false);
+        App.menu.preencherDados();
+        App.menu.preencherTabela();
 
     }
     public void descartado(){
@@ -35,6 +42,8 @@ public class Muda {
         App.DescarteNovo.setVisible(true);
         App.DesempenhoNovo.setVisible(false);
         App.Editar.setVisible(false);
+        App.menu.preencherDados();
+        App.menu.preencherTabela();
 
     }
     public void Editar(){
@@ -43,14 +52,16 @@ public class Muda {
         App.DescarteNovo.setVisible(false);
         App.Editar.setVisible(true);
         App.DesempenhoNovo.setVisible(false);
+        App.menu.preencherDados();
+        App.menu.preencherTabela();
     }
-
-
-
-
-
-
-
-
-    
+    public void Criar(){
+        App.Criar.setVisible(true);
+        App.login.setVisible(false);
+    } 
+    public void vola(){
+        App.Criar.setVisible(false);
+        App.login.setVisible(true);
+    } 
+     
 }

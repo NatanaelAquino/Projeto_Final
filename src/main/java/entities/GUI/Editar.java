@@ -25,18 +25,9 @@ public class Editar extends javax.swing.JFrame {
         public Editar() {
                 initComponents();
         }
+     
 
-        public void preencherCampos(DatabaseDescarte dados) {
-                // Preencher os campos com os dados do registro
-                jTextField1.setText(dados.getNomeResiduo());
-                jTextField3.setText(String.valueOf(dados.getQuantidade()));
-                jComboBox1.setSelectedItem(dados.getTipoResiduo());
-                jComboBox2.setSelectedItem(dados.getTipoFase());
-                jComboBox3.setSelectedItem(dados.getSetor());
-                jComboBox4.setSelectedItem(dados.getFormaReciclagem());
-                jComboBox5.setSelectedItem(dados.getComoDescartado());
-                jTextArea1.setText(dados.getDescricaoDescarte());
-        }
+
         @SuppressWarnings("unchecked")
         // <editor-fold defaultstate="collapsed" desc="Generated Code">
         private void initComponents() {
@@ -608,6 +599,7 @@ public class Editar extends javax.swing.JFrame {
         private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {
                 muda.perfil();
         }
+
         private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {
                 String nomeResiduo = jTextField1.getText();
                 String tipoResiduo = (String) jComboBox4.getSelectedItem();
@@ -617,44 +609,25 @@ public class Editar extends javax.swing.JFrame {
                 String formaReciclagem = (String) jComboBox1.getSelectedItem();
                 String comoDescartado = (String) jComboBox5.getSelectedItem();
                 String descricaoDescarte = jTextArea1.getText();
-                
+
                 try {
                         long quantidade = Long.parseLong(quantidadeSTR);
                         DatabaseDescarte dados = new DatabaseDescarte();
                         String idString = jTextField2.getText();
                         long id = Long.parseLong(idString);
-                        dados.setId(id); // Defina o ID antes de chamar o método editardescarte()
-                        dados.editardescarte(nomeResiduo, tipoResiduo, tipoFase, setor, quantidade, formaReciclagem, comoDescartado, descricaoDescarte, id);                        
+                        dados.editardescarte(nomeResiduo, tipoResiduo, tipoFase, setor, quantidade, formaReciclagem,
+                                        comoDescartado, descricaoDescarte, id);
                         App.menu.preencherTabela();
-                    } catch (NumberFormatException e) {
+                } catch (NumberFormatException e) {
                         JOptionPane.showMessageDialog(this, "A quantidade não é um número válido.");
-                    }    
+                }
         }
 
         private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {
 
-                String idString = jTextField2.getText();
-                if (!idString.isEmpty()) {
-                        if (idString.matches("\\d+")) {
-                                long id = Long.parseLong(idString);
-                                DatabaseDescarte dados = new DatabaseDescarte();
-                                System.out.println(id);
-                                String nomeResiduo = jTextField1.getText();
-                                String tipoResiduo = (String) jComboBox4.getSelectedItem();
-                                String tipoFase = (String) jComboBox2.getSelectedItem();
-                                String setor = (String) jComboBox3.getSelectedItem();
-                                String quantidadeSTR = jTextField3.getText();
-                                String formaReciclagem = (String) jComboBox1.getSelectedItem();
-                                String comoDescartado = (String) jComboBox5.getSelectedItem();
-                                String descricaoDescarte = jTextArea1.getText();
-                        } else {
-                                JOptionPane.showMessageDialog(null, "Por favor, insira apenas números no campo de ID.",
-                                                "Formato Inválido", JOptionPane.WARNING_MESSAGE);
-                        }
-                } else {
-                        JOptionPane.showMessageDialog(null, "Por favor, preencha o campo de ID.", "Campo vazio",
-                                        JOptionPane.WARNING_MESSAGE);
-                }
+        
+                String id = jTextField2.getText();
+                dados.preencha(jComboBox1, jComboBox2, jComboBox3, jComboBox4, jComboBox5, jTextArea1, jTextField3,jTextField1,id);
         }
 
         /**

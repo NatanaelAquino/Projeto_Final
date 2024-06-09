@@ -4,6 +4,7 @@
  */
 package main.java.entities.GUI;
 
+import main.java.DAO.Filtro;
 import main.java.utils.Muda;
 
 /**
@@ -22,6 +23,12 @@ public class DesempenhoNovo extends javax.swing.JFrame {
         initComponents();
     }
 
+     public void preencherDados() {
+                Filtro filtro = new Filtro();
+                filtro.calcularQuantidadesAdm(lbDescription9, lbDescription10, lbDescription6);
+                filtro.calcularQuantidadesLog(lbDescription12, lbDescription14, lbDescription13);
+                filtro.calcularQuantidadesProducao(lbDescription17, lbDescription16, lbDescription15);
+        }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -87,8 +94,6 @@ public class DesempenhoNovo extends javax.swing.JFrame {
 
         lbDescription11.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         lbDescription11.setForeground(new java.awt.Color(255, 255, 255));
-        lbDescription11.setText("Description");
-
         javax.swing.GroupLayout kGradientPanel13Layout = new javax.swing.GroupLayout(kGradientPanel13);
         kGradientPanel13.setLayout(kGradientPanel13Layout);
         kGradientPanel13Layout.setHorizontalGroup(
@@ -280,7 +285,6 @@ public class DesempenhoNovo extends javax.swing.JFrame {
 
         lbDescription6.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         lbDescription6.setForeground(new java.awt.Color(255, 255, 255));
-        lbDescription6.setText("Description");
 
         javax.swing.GroupLayout kGradientPanel8Layout = new javax.swing.GroupLayout(kGradientPanel8);
         kGradientPanel8.setLayout(kGradientPanel8Layout);
@@ -317,7 +321,6 @@ public class DesempenhoNovo extends javax.swing.JFrame {
 
         lbDescription9.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         lbDescription9.setForeground(new java.awt.Color(255, 255, 255));
-        lbDescription9.setText("Description");
 
         javax.swing.GroupLayout kGradientPanel11Layout = new javax.swing.GroupLayout(kGradientPanel11);
         kGradientPanel11.setLayout(kGradientPanel11Layout);
@@ -354,7 +357,6 @@ public class DesempenhoNovo extends javax.swing.JFrame {
 
         lbDescription10.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         lbDescription10.setForeground(new java.awt.Color(255, 255, 255));
-        lbDescription10.setText("Description");
 
         javax.swing.GroupLayout kGradientPanel12Layout = new javax.swing.GroupLayout(kGradientPanel12);
         kGradientPanel12.setLayout(kGradientPanel12Layout);
@@ -390,7 +392,6 @@ public class DesempenhoNovo extends javax.swing.JFrame {
 
         lbDescription12.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         lbDescription12.setForeground(new java.awt.Color(255, 255, 255));
-        lbDescription12.setText("Description");
 
         javax.swing.GroupLayout kGradientPanel14Layout = new javax.swing.GroupLayout(kGradientPanel14);
         kGradientPanel14.setLayout(kGradientPanel14Layout);
@@ -426,7 +427,6 @@ public class DesempenhoNovo extends javax.swing.JFrame {
 
         lbDescription13.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         lbDescription13.setForeground(new java.awt.Color(255, 255, 255));
-        lbDescription13.setText("Description");
 
         javax.swing.GroupLayout kGradientPanel15Layout = new javax.swing.GroupLayout(kGradientPanel15);
         kGradientPanel15.setLayout(kGradientPanel15Layout);
@@ -462,7 +462,6 @@ public class DesempenhoNovo extends javax.swing.JFrame {
 
         lbDescription14.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         lbDescription14.setForeground(new java.awt.Color(255, 255, 255));
-        lbDescription14.setText("Description");
 
         javax.swing.GroupLayout kGradientPanel16Layout = new javax.swing.GroupLayout(kGradientPanel16);
         kGradientPanel16.setLayout(kGradientPanel16Layout);
@@ -498,7 +497,6 @@ public class DesempenhoNovo extends javax.swing.JFrame {
 
         lbDescription16.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         lbDescription16.setForeground(new java.awt.Color(255, 255, 255));
-        lbDescription16.setText("Description");
 
         javax.swing.GroupLayout kGradientPanel18Layout = new javax.swing.GroupLayout(kGradientPanel18);
         kGradientPanel18.setLayout(kGradientPanel18Layout);
@@ -534,7 +532,6 @@ public class DesempenhoNovo extends javax.swing.JFrame {
 
         lbDescription15.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         lbDescription15.setForeground(new java.awt.Color(255, 255, 255));
-        lbDescription15.setText("Description");
 
         javax.swing.GroupLayout kGradientPanel17Layout = new javax.swing.GroupLayout(kGradientPanel17);
         kGradientPanel17.setLayout(kGradientPanel17Layout);
@@ -570,7 +567,6 @@ public class DesempenhoNovo extends javax.swing.JFrame {
 
         lbDescription17.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         lbDescription17.setForeground(new java.awt.Color(255, 255, 255));
-        lbDescription17.setText("Description");
 
         javax.swing.GroupLayout kGradientPanel19Layout = new javax.swing.GroupLayout(kGradientPanel19);
         kGradientPanel19.setLayout(kGradientPanel19Layout);
@@ -755,12 +751,7 @@ public class DesempenhoNovo extends javax.swing.JFrame {
         }
         // </editor-fold>
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new DesempenhoNovo().setVisible(true);
-            }
-        });
+
     }
 
     // Variables declaration - do not modify

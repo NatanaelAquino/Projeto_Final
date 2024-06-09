@@ -8,6 +8,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.swing.table.DefaultTableModel;
+
 import main.java.App;
 import main.java.utils.Conexao;
 
@@ -15,10 +16,11 @@ public class DatabaseQuery {
 
     private String senha;
     private String id;
-    private String nome; 
-    private String email; 
-
-    public DatabaseQuery() {}
+    private String nome;
+    private String email;
+    public DatabaseQuery() {
+    }
+  
 
     public DatabaseQuery(String senha, String id) {
         this.senha = senha;
@@ -84,6 +86,8 @@ public class DatabaseQuery {
                     App.login.setVisible(false);
                     App.menu.setVisible(true);
                     App.menu.preencherTabela();
+                    App.menu.preencherDados();
+                    App.DesempenhoNovo.preencherDados();
                 } else {
                     System.out.println("Senha incorreta");
                 }
@@ -92,15 +96,8 @@ public class DatabaseQuery {
             }
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            try {
-                if (rs != null) rs.close();
-                if (pstmt != null) pstmt.close();
-                if (conn != null) conn.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
+        } 
+        
     }
 
     public void preencherTabela(javax.swing.JTable jTable) {
@@ -116,11 +113,12 @@ public class DatabaseQuery {
             String id = App.userID;
 
             if (id == null) {
-                System.out.println("ID do usuário não definido. Certifique-se de que o login foi realizado corretamente.");
+                System.out.println(
+                        "ID do usuário não definido. Certifique-se de que o login foi realizado corretamente.");
                 return;
             }
-            System.out.println("ID do usuário: " + id);  
-                String sql = "SELECT tipo_residuo, quantidade, data_descarte, id , nome_residuo FROM descarte WHERE usuario_id = ?";
+            System.out.println("ID do usuário: " + id);
+            String sql = "SELECT tipo_residuo, quantidade, data_descarte, id , nome_residuo FROM descarte WHERE usuario_id = ?";
             pstmt = conn.prepareStatement(sql);
             pstmt.setString(1, id);
             rs = pstmt.executeQuery();
@@ -132,25 +130,15 @@ public class DatabaseQuery {
                 String nome = rs.getString("nome_residuo");
                 int idDescarte = rs.getInt("id");
 
-                
-
                 SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
                 String dataFormatada = sdf.format(data);
 
-                System.out.println("Tipo: " + tipo + ", Quantidade: " + quantidade + ", Data: " + dataFormatada);  
+                System.out.println("Tipo: " + tipo + ", Quantidade: " + quantidade + ", Data: " + dataFormatada);
 
-                model.addRow(new Object[]{idDescarte,nome,tipo, quantidade, dataFormatada,});
+                model.addRow(new Object[] { idDescarte, nome, tipo, quantidade, dataFormatada, });
             }
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            try {
-                if (rs != null) rs.close();
-                if (pstmt != null) pstmt.close();
-                if (conn != null) conn.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+        } 
         }
     }
-}

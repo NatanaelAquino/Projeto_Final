@@ -10,7 +10,6 @@ import main.java.entities.GUI.DesempenhoNovo;
 import main.java.entities.GUI.Editar;
 
 public class App {
-   
     public static String userID;
     public static DatabaseQuery dados = new DatabaseQuery();
     public static Menu menu = new Menu();

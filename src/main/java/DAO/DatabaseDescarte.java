@@ -1,9 +1,12 @@
 package main.java.DAO;
+
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+
 import javax.swing.JOptionPane;
+
 import main.java.App;
 import main.java.utils.Conexao;
 
@@ -16,18 +19,15 @@ public class DatabaseDescarte {
         private String formaReciclagem;
         private String comoDescartado;
         private String descricaoDescarte;
-        private long id;
+        private Integer id;
 
         public DatabaseDescarte() {
         }
 
-        public void setId(long id) {
-            this.id = id;
-        }
 
         public DatabaseDescarte(Long quantidadeSTR, String nomeResiduo, String tipoResiduo, String tipoFase,
-                String setor,
-                String formaReciclagem, String comoDescartado, String descricaoDescarte) {
+                        String setor,
+                        String formaReciclagem, String comoDescartado, String descricaoDescarte) {
                 this.quantidadeSTR = quantidadeSTR;
                 this.nomeResiduo = nomeResiduo;
                 this.tipoResiduo = tipoResiduo;
@@ -58,11 +58,10 @@ public class DatabaseDescarte {
                                         ps.setString(9, App.userID);
                                         ps.executeUpdate();
                                 }
-                                App.home.preencherTabela();
                         }
                 } catch (NumberFormatException e) {
-                        JOptionPane.showMessageDialog(null, "A quantidade não é um número válido.");Are you sure you want to continue connecting 
-                        
+                        JOptionPane.showMessageDialog(null, "A quantidade não é um número válido.");
+
                 } catch (Exception e) {
                         e.printStackTrace();
                         JOptionPane.showMessageDialog(null, "Erro ao inserir os dados no banco de dados.");
@@ -72,6 +71,7 @@ public class DatabaseDescarte {
         public void editardescarte(String nomeResiduo, String tipoResiduo, String tipoFase, String setor,
                         long quantidade, String formaReciclagem, String comoDescartado, String descricaoDescarte,
                         long id) {
+
                 try {
                         if (nomeResiduo == null || nomeResiduo.isEmpty() || tipoResiduo == null || tipoFase == null
                                         || setor == null || quantidade <= 0 || comoDescartado == null
@@ -92,7 +92,6 @@ public class DatabaseDescarte {
                                         ps.setLong(9, id);
                                         ps.executeUpdate();
                                 }
-                                App.home.preencherTabela();
                         }
                 } catch (NumberFormatException e) {
                         JOptionPane.showMessageDialog(null, "A quantidade não é um número válido.");
@@ -101,5 +100,44 @@ public class DatabaseDescarte {
                         JOptionPane.showMessageDialog(null, "Erro ao inserir os dados no banco de dados.");
                 }
         }
-        
+
+        public void preencha(javax.swing.JComboBox jComboBox1, javax.swing.JComboBox jComboBox2,
+                        javax.swing.JComboBox jComboBox3, javax.swing.JComboBox jComboBox4,
+                        javax.swing.JComboBox jComboBox5, javax.swing.JTextArea jTextArea1,
+                        javax.swing.JTextField jTextField1,javax.swing.JTextField jTextField3, String id) {
+
+                Connection conn = null;
+                PreparedStatement pstmt = null;
+                ResultSet rs = null;
+
+                try {
+                        conn = Conexao.getConnection();
+                        String sql = "SELECT * FROM descarte WHERE id = " + id;
+                        pstmt = conn.prepareStatement(sql);
+                        rs = pstmt.executeQuery();
+
+                        if (rs.next()) {
+                                Integer quantidadeSTR = rs.getInt("quantidade");
+                                String nomeResiduo = rs.getString("nome_residuo");
+                                String tipoResiduo = rs.getString("tipo_residuo");
+                                String tipoFase = rs.getString("tipo_fase");
+                                String setor = rs.getString("setor");
+                                String formaReciclagem = rs.getString("forma_reciclagem");
+                                String comoDescartado = rs.getString("como_descartado");
+                                String descricaoDescarte = rs.getString("descricao_descarte");
+
+                                jComboBox1.setSelectedItem(formaReciclagem);
+                                jComboBox2.setSelectedItem(comoDescartado);
+                                jComboBox3.setSelectedItem(tipoResiduo);
+                                jComboBox4.setSelectedItem(tipoFase);
+                                jComboBox5.setSelectedItem(setor);
+                                jTextArea1.setText(descricaoDescarte);
+                                jTextField3.setText(nomeResiduo);
+                                jTextField1.setText(Integer.toString(quantidadeSTR));
+                        }
+                } catch (SQLException e) {
+                        e.printStackTrace();
+                }
+        }
+
 }

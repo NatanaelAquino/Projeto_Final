@@ -5,6 +5,7 @@
 package main.java.entities.GUI;
 
 import main.java.DAO.DatabaseQuery;
+import main.java.DAO.Filtro;
 import main.java.utils.Muda;
 
 /**
@@ -18,8 +19,15 @@ public class Menu extends javax.swing.JFrame {
          * 
          */
         Muda muda = new Muda();
+
         public Menu() {
                 initComponents();
+
+        }
+
+        public void preencherDados() {
+                Filtro filtro = new Filtro();
+                filtro.calcularQuantidades(lbDescription, lbDescription1, lbDescription2);
         }
 
         public void preencherTabela() {
@@ -265,7 +273,6 @@ public class Menu extends javax.swing.JFrame {
 
                 lbDescription.setFont(new java.awt.Font("Bahnschrift", 1, 18)); // NOI18N
                 lbDescription.setForeground(new java.awt.Color(255, 255, 255));
-                lbDescription.setText("Description");
 
                 lbValues.setFont(new java.awt.Font("Bahnschrift", 1, 18)); // NOI18N
                 lbValues.setForeground(new java.awt.Color(255, 255, 255));
@@ -315,7 +322,6 @@ public class Menu extends javax.swing.JFrame {
 
                 lbDescription1.setFont(new java.awt.Font("Bahnschrift", 1, 18)); // NOI18N
                 lbDescription1.setForeground(new java.awt.Color(255, 255, 255));
-                lbDescription1.setText("Description");
 
                 jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/resources/images/7.png"))); // NOI18N
 
@@ -373,7 +379,6 @@ public class Menu extends javax.swing.JFrame {
 
                 lbDescription2.setFont(new java.awt.Font("Bahnschrift", 1, 18)); // NOI18N
                 lbDescription2.setForeground(new java.awt.Color(255, 255, 255));
-                lbDescription2.setText("Description");
 
                 jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/resources/images/7.png"))); // NOI18N
 
@@ -417,7 +422,7 @@ public class Menu extends javax.swing.JFrame {
                                                 "ID", "NOME", "TIPO", "QUANTIDADE", "DATA"
                                 }) {
                         boolean[] canEdit = new boolean[] {
-                                        false, false, false, true, false
+                                        false, false, false, false, false // All columns are non-editable now
                         };
 
                         public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -464,14 +469,12 @@ public class Menu extends javax.swing.JFrame {
                                                 .addComponent(kGradientPanel1,
                                                                 javax.swing.GroupLayout.Alignment.TRAILING,
                                                                 javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                Short.MAX_VALUE)
+                                                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                 .addGroup(jPanel1Layout.createSequentialGroup()
                                                                 .addGap(22, 22, 22)
-                                                                .addGroup(jPanel1Layout
-                                                                                .createParallelGroup(
-                                                                                                javax.swing.GroupLayout.Alignment.LEADING,
-                                                                                                false)
+                                                                .addGroup(jPanel1Layout.createParallelGroup(
+                                                                                javax.swing.GroupLayout.Alignment.LEADING,
+                                                                                false)
                                                                                 .addComponent(kGradientPanel2,
                                                                                                 javax.swing.GroupLayout.DEFAULT_SIZE,
                                                                                                 javax.swing.GroupLayout.DEFAULT_SIZE,
@@ -505,6 +508,7 @@ public class Menu extends javax.swing.JFrame {
 
                 setSize(new java.awt.Dimension(1016, 528));
                 setLocationRelativeTo(null);
+
         }// </editor-fold>
 
         private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
