@@ -8,6 +8,7 @@ import main.java.entities.GUI.Menu;
 import main.java.entities.GUI.PerfilNovo;
 import main.java.entities.GUI.DesempenhoNovo;
 import main.java.entities.GUI.Editar;
+import main.java.entities.GUI.LocalDedescarte;
 
 public class App {
     public static String userID;
@@ -19,8 +20,10 @@ public class App {
     public static PerfilNovo PerfilNovo = new PerfilNovo();
     public static Login login = new Login(); 
     public static Criar Criar = new Criar();
+    public static LocalDedescarte Local = new LocalDedescarte();
+
 
     public static void main(String[] args) {
-        login.setVisible(true);
+        Local.setVisible(true);
     }
 }

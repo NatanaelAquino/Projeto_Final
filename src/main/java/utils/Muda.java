@@ -13,7 +13,7 @@ public class Muda {
         App.Editar.setVisible(false);
         App.menu.preencherDados();
         App.menu.preencherTabela();
-
+        App.Local.setVisible(false);
 
     }
     public void Home(){
@@ -24,6 +24,7 @@ public class Muda {
         App.Editar.setVisible(false);
         App.menu.preencherDados();
         App.menu.preencherTabela();
+        App.Local.setVisible(false);
 
     }
     public void desempenho(){
@@ -34,6 +35,8 @@ public class Muda {
         App.Editar.setVisible(false);
         App.menu.preencherDados();
         App.menu.preencherTabela();
+        App.Local.setVisible(false);
+
 
     }
     public void descartado(){
@@ -44,6 +47,8 @@ public class Muda {
         App.Editar.setVisible(false);
         App.menu.preencherDados();
         App.menu.preencherTabela();
+        App.Local.setVisible(false);
+
 
     }
     public void Editar(){
@@ -54,14 +59,24 @@ public class Muda {
         App.DesempenhoNovo.setVisible(false);
         App.menu.preencherDados();
         App.menu.preencherTabela();
+        App.Local.setVisible(false);
+
+    }
+    public void LocalDescarte(){
+        App.menu.setVisible(false);
+        App.PerfilNovo.setVisible(false);
+        App.DescarteNovo.setVisible(false);
+        App.Editar.setVisible(false);
+        App.DesempenhoNovo.setVisible(false);
+        App.menu.preencherDados();
+        App.menu.preencherTabela();
+        App.Local.setVisible(true);
+
     }
     public void Criar(){
         App.Criar.setVisible(true);
         App.login.setVisible(false);
     } 
-    public void vola(){
-        App.Criar.setVisible(false);
-        App.login.setVisible(true);
-    } 
+
      
 }

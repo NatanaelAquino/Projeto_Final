@@ -49,6 +49,7 @@ public class DesempenhoNovo extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         kGradientPanel8 = new keeptoo.KGradientPanel();
@@ -90,7 +91,7 @@ public class DesempenhoNovo extends javax.swing.JFrame {
 
         lbValues13.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
         lbValues13.setForeground(new java.awt.Color(255, 255, 255));
-        lbValues13.setText("Total");
+        lbValues13.setText("Administrção 13");
 
         lbDescription11.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         lbDescription11.setForeground(new java.awt.Color(255, 255, 255));
@@ -208,7 +209,21 @@ public class DesempenhoNovo extends javax.swing.JFrame {
                 jButton5ActionPerformed(evt);
             }
         });
-
+        jButton6.setFont(new java.awt.Font("Segoe UI Black", 3, 14)); // NOI18N
+        jButton6.setForeground(new java.awt.Color(255, 255, 255));
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/resources/images/8.png"))); // NOI18N
+        jButton6.setText("Local de Descarte");
+        jButton6.setBorder(javax.swing.BorderFactory.createCompoundBorder());
+        jButton6.setContentAreaFilled(false);
+        jButton6.setDoubleBuffered(true);
+        jButton6.setFocusCycleRoot(true);
+        jButton6.setFocusTraversalPolicyProvider(true);
+        jButton6.setHideActionText(true);
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+                }
+            });
         jLabel1.setFont(new java.awt.Font("Segoe UI Black", 3, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Configuraçoes  ");
@@ -237,6 +252,9 @@ public class DesempenhoNovo extends javax.swing.JFrame {
                                                 .addComponent(jButton3, javax.swing.GroupLayout.Alignment.LEADING,
                                                         javax.swing.GroupLayout.DEFAULT_SIZE,
                                                         javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(jButton6, javax.swing.GroupLayout.Alignment.LEADING,
+                                                        javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                        javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                 .addComponent(jButton2, javax.swing.GroupLayout.Alignment.LEADING,
                                                         javax.swing.GroupLayout.DEFAULT_SIZE,
                                                         javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -260,6 +278,8 @@ public class DesempenhoNovo extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 36,
                                         javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 36,
+                                        javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 36,
                                         javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -276,12 +296,13 @@ public class DesempenhoNovo extends javax.swing.JFrame {
                 javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED)));
         kGradientPanel8.setkEndColor(new java.awt.Color(0, 0, 0));
         kGradientPanel8.setkStartColor(new java.awt.Color(102, 0, 102));
-        kGradientPanel8.setMaximumSize(new java.awt.Dimension(200, 100));
-        kGradientPanel8.setMinimumSize(new java.awt.Dimension(100, 200));
+        kGradientPanel8.setPreferredSize(new java.awt.Dimension(220, 90));
+        kGradientPanel8.setMaximumSize(new java.awt.Dimension(220, 90));
+        kGradientPanel8.setMinimumSize(new java.awt.Dimension(220, 90));
 
         lbValues6.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
         lbValues6.setForeground(new java.awt.Color(255, 255, 255));
-        lbValues6.setText("Total");
+        lbValues6.setText("Logistica");
 
         lbDescription6.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         lbDescription6.setForeground(new java.awt.Color(255, 255, 255));
@@ -312,12 +333,12 @@ public class DesempenhoNovo extends javax.swing.JFrame {
                 javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED)));
         kGradientPanel11.setkEndColor(new java.awt.Color(0, 0, 0));
         kGradientPanel11.setkStartColor(new java.awt.Color(102, 0, 102));
-        kGradientPanel11.setMaximumSize(new java.awt.Dimension(200, 100));
-        kGradientPanel11.setMinimumSize(new java.awt.Dimension(100, 200));
-
+        kGradientPanel11.setPreferredSize(new java.awt.Dimension(220, 90));
+        kGradientPanel11.setMaximumSize(new java.awt.Dimension(220, 90));
+        kGradientPanel11.setMinimumSize(new java.awt.Dimension(220, 90));
         lbValues8.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
         lbValues8.setForeground(new java.awt.Color(255, 255, 255));
-        lbValues8.setText("Total");
+        lbValues8.setText("Não Reclicagem");
 
         lbDescription9.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         lbDescription9.setForeground(new java.awt.Color(255, 255, 255));
@@ -348,12 +369,13 @@ public class DesempenhoNovo extends javax.swing.JFrame {
                 javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED)));
         kGradientPanel12.setkEndColor(new java.awt.Color(0, 0, 0));
         kGradientPanel12.setkStartColor(new java.awt.Color(102, 0, 102));
-        kGradientPanel12.setMaximumSize(new java.awt.Dimension(200, 100));
-        kGradientPanel12.setMinimumSize(new java.awt.Dimension(100, 200));
+        kGradientPanel12.setPreferredSize(new java.awt.Dimension(220, 90));
+        kGradientPanel12.setMaximumSize(new java.awt.Dimension(220, 90));
+        kGradientPanel12.setMinimumSize(new java.awt.Dimension(220, 90));
 
         lbValues11.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
         lbValues11.setForeground(new java.awt.Color(255, 255, 255));
-        lbValues11.setText("Total");
+        lbValues11.setText("Reclicagem");
 
         lbDescription10.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         lbDescription10.setForeground(new java.awt.Color(255, 255, 255));
@@ -384,11 +406,14 @@ public class DesempenhoNovo extends javax.swing.JFrame {
                 javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED)));
         kGradientPanel14.setkEndColor(new java.awt.Color(0, 0, 0));
         kGradientPanel14.setkStartColor(new java.awt.Color(102, 0, 102));
-        kGradientPanel14.setMaximumSize(new java.awt.Dimension(200, 100));
+        kGradientPanel14.setPreferredSize(new java.awt.Dimension(220, 90));
+        kGradientPanel14.setMaximumSize(new java.awt.Dimension(220, 90));
+        kGradientPanel14.setMinimumSize(new java.awt.Dimension(220, 90));
+
 
         lbValues14.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
         lbValues14.setForeground(new java.awt.Color(255, 255, 255));
-        lbValues14.setText("Total");
+        lbValues14.setText("Produção");
 
         lbDescription12.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         lbDescription12.setForeground(new java.awt.Color(255, 255, 255));
@@ -419,11 +444,13 @@ public class DesempenhoNovo extends javax.swing.JFrame {
                 javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED)));
         kGradientPanel15.setkEndColor(new java.awt.Color(0, 0, 0));
         kGradientPanel15.setkStartColor(new java.awt.Color(102, 0, 102));
-        kGradientPanel15.setMaximumSize(new java.awt.Dimension(200, 100));
+        kGradientPanel15.setPreferredSize(new java.awt.Dimension(220, 90));
+        kGradientPanel15.setMaximumSize(new java.awt.Dimension(220, 90));
+        kGradientPanel15.setMinimumSize(new java.awt.Dimension(220, 90));
 
         lbValues15.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
         lbValues15.setForeground(new java.awt.Color(255, 255, 255));
-        lbValues15.setText("Total");
+        lbValues15.setText("Não Reciclagem");
 
         lbDescription13.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         lbDescription13.setForeground(new java.awt.Color(255, 255, 255));
@@ -454,11 +481,13 @@ public class DesempenhoNovo extends javax.swing.JFrame {
                 javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED)));
         kGradientPanel16.setkEndColor(new java.awt.Color(0, 0, 0));
         kGradientPanel16.setkStartColor(new java.awt.Color(102, 0, 102));
-        kGradientPanel16.setMaximumSize(new java.awt.Dimension(200, 100));
+        kGradientPanel16.setPreferredSize(new java.awt.Dimension(220, 90));
+        kGradientPanel16.setMaximumSize(new java.awt.Dimension(220, 90));
+        kGradientPanel16.setMinimumSize(new java.awt.Dimension(220, 90));
 
         lbValues16.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
         lbValues16.setForeground(new java.awt.Color(255, 255, 255));
-        lbValues16.setText("Total");
+        lbValues16.setText("Reciclagem");
 
         lbDescription14.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         lbDescription14.setForeground(new java.awt.Color(255, 255, 255));
@@ -489,11 +518,12 @@ public class DesempenhoNovo extends javax.swing.JFrame {
                 javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED)));
         kGradientPanel18.setkEndColor(new java.awt.Color(0, 0, 0));
         kGradientPanel18.setkStartColor(new java.awt.Color(102, 0, 102));
-        kGradientPanel18.setMaximumSize(new java.awt.Dimension(200, 100));
-
+        kGradientPanel18.setPreferredSize(new java.awt.Dimension(220, 90));
+        kGradientPanel18.setMaximumSize(new java.awt.Dimension(220, 90));
+        kGradientPanel18.setMinimumSize(new java.awt.Dimension(220, 90));
         lbValues18.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
         lbValues18.setForeground(new java.awt.Color(255, 255, 255));
-        lbValues18.setText("Total");
+        lbValues18.setText("Reciclagem");
 
         lbDescription16.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         lbDescription16.setForeground(new java.awt.Color(255, 255, 255));
@@ -524,11 +554,13 @@ public class DesempenhoNovo extends javax.swing.JFrame {
                 javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED)));
         kGradientPanel17.setkEndColor(new java.awt.Color(0, 0, 0));
         kGradientPanel17.setkStartColor(new java.awt.Color(102, 0, 102));
-        kGradientPanel17.setMaximumSize(new java.awt.Dimension(200, 100));
+        kGradientPanel17.setPreferredSize(new java.awt.Dimension(220, 90));
+        kGradientPanel17.setMaximumSize(new java.awt.Dimension(220, 90));
+        kGradientPanel17.setMinimumSize(new java.awt.Dimension(220, 90));
 
         lbValues17.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
         lbValues17.setForeground(new java.awt.Color(255, 255, 255));
-        lbValues17.setText("Total");
+        lbValues17.setText("Não Reciclagem");
 
         lbDescription15.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         lbDescription15.setForeground(new java.awt.Color(255, 255, 255));
@@ -559,11 +591,14 @@ public class DesempenhoNovo extends javax.swing.JFrame {
                 javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED)));
         kGradientPanel19.setkEndColor(new java.awt.Color(0, 0, 0));
         kGradientPanel19.setkStartColor(new java.awt.Color(102, 0, 102));
-        kGradientPanel19.setMaximumSize(new java.awt.Dimension(200, 100));
+        kGradientPanel19.setPreferredSize(new java.awt.Dimension(220, 90));
+        kGradientPanel19.setMaximumSize(new java.awt.Dimension(220, 90));
+        kGradientPanel19.setMinimumSize(new java.awt.Dimension(220, 90));
+
 
         lbValues19.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
         lbValues19.setForeground(new java.awt.Color(255, 255, 255));
-        lbValues19.setText("Total");
+        lbValues19.setText("Administração");
 
         lbDescription17.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
         lbDescription17.setForeground(new java.awt.Color(255, 255, 255));
@@ -596,7 +631,7 @@ public class DesempenhoNovo extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(kGradientPanel1, javax.swing.GroupLayout.PREFERRED_SIZE,
                                         javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(61, 61, 61)
+                                .addGap(10, 10, 10)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(jPanel1Layout.createSequentialGroup()
                                                 .addGroup(jPanel1Layout
@@ -715,6 +750,10 @@ public class DesempenhoNovo extends javax.swing.JFrame {
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {
         muda.perfil();
     }
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {
+        muda.LocalDescarte();
+}
+
 
     /**
      * @param args the command line arguments
@@ -760,6 +799,7 @@ public class DesempenhoNovo extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;

@@ -1,5 +1,4 @@
 package main.java.entities;
-
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
@@ -7,13 +6,10 @@ import java.net.http.HttpResponse;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
-
 import com.mysql.cj.xdevapi.DbDoc;
 import com.mysql.cj.xdevapi.JsonParser;
-
 import main.java.App;
 import main.java.utils.Conexao;
 
@@ -128,7 +124,6 @@ public class User {
             jTextField9.setText(json.get("localidade").toString().replaceAll("\"", "") );
             jTextField8.setText(json.get("uf").toString().replaceAll("\"", "")  );
         } catch (Exception e) {
-
             JOptionPane.showMessageDialog(null, "CEP INVALIDO");
         }
     }

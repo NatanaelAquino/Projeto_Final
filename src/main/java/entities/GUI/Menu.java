@@ -52,6 +52,8 @@ public class Menu extends javax.swing.JFrame {
                 jButton3 = new javax.swing.JButton();
                 jButton4 = new javax.swing.JButton();
                 jButton5 = new javax.swing.JButton();
+                jButton6 = new javax.swing.JButton();
+
                 jLabel1 = new javax.swing.JLabel();
                 jLabel2 = new javax.swing.JLabel();
                 kGradientPanel2 = new keeptoo.KGradientPanel();
@@ -166,6 +168,22 @@ public class Menu extends javax.swing.JFrame {
                         }
                 });
 
+                jButton6.setFont(new java.awt.Font("Segoe UI Black", 3, 14)); // NOI18N
+                jButton6.setForeground(new java.awt.Color(255, 255, 255));
+                jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/resources/images/8.png"))); // NOI18N
+                jButton6.setText("Local de Descarte");
+                jButton6.setBorder(javax.swing.BorderFactory.createCompoundBorder());
+                jButton6.setContentAreaFilled(false);
+                jButton6.setDoubleBuffered(true);
+                jButton6.setFocusCycleRoot(true);
+                jButton6.setFocusTraversalPolicyProvider(true);
+                jButton6.setHideActionText(true);
+                jButton6.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                jButton6ActionPerformed(evt);
+                        }
+                });
+                
                 jLabel1.setFont(new java.awt.Font("Segoe UI Black", 3, 18)); // NOI18N
                 jLabel1.setForeground(new java.awt.Color(255, 255, 255));
                 jLabel1.setText("Configuraçoes  ");
@@ -201,6 +219,11 @@ public class Menu extends javax.swing.JFrame {
                                                                                                                 javax.swing.GroupLayout.DEFAULT_SIZE,
                                                                                                                 Short.MAX_VALUE)
                                                                                                 .addComponent(jButton3,
+                                                                                                                javax.swing.GroupLayout.Alignment.LEADING,
+                                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                                                                Short.MAX_VALUE)
+                                                                                                .addComponent(jButton6,
                                                                                                                 javax.swing.GroupLayout.Alignment.LEADING,
                                                                                                                 javax.swing.GroupLayout.DEFAULT_SIZE,
                                                                                                                 javax.swing.GroupLayout.DEFAULT_SIZE,
@@ -242,6 +265,10 @@ public class Menu extends javax.swing.JFrame {
                                                                 .addPreferredGap(
                                                                                 javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                                 .addComponent(jButton3,
+                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                36,
+                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addComponent(jButton6,
                                                                                 javax.swing.GroupLayout.PREFERRED_SIZE,
                                                                                 36,
                                                                                 javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -530,6 +557,9 @@ public class Menu extends javax.swing.JFrame {
         private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {
                 muda.perfil();
         }
+        private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {
+                muda.LocalDescarte();
+        }
 
         /**
          * @param args the command line arguments
@@ -581,6 +611,7 @@ public class Menu extends javax.swing.JFrame {
         private javax.swing.JButton jButton3;
         private javax.swing.JButton jButton4;
         private javax.swing.JButton jButton5;
+        private javax.swing.JButton jButton6;
         private javax.swing.JLabel jLabel1;
         private javax.swing.JLabel jLabel2;
         private javax.swing.JLabel jLabel4;
