@@ -5,6 +5,7 @@
 package main.java.entities.GUI;
 
 import main.java.DAO.Local;
+import main.java.utils.Muda;
 
 /**
  *
@@ -454,45 +455,44 @@ public class LocalDedescarte extends javax.swing.JFrame {
 
         setSize(new java.awt.Dimension(1016, 528));
         setLocationRelativeTo(null);
-    }// </editor-fold>                        
+    }// </editor-fold>   
+    
+        Muda muda = new Muda();
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        // TODO add your handling code here:
-    }                                        
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {
+        muda.Editar();
+    }
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        // TODO add your handling code here:
-    }                                        
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
+        muda.desempenho();
+    }
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        // TODO add your handling code here:
-    }                                        
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {
+        muda.descartado();
+    }
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        // TODO add your handling code here:
-    }                                        
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {
+        muda.Home();
+    }
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        // TODO add your handling code here:
-    }                                        
-
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        // TODO add your handling code here:
-    }                                        
-
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {                                            
-        // TODO add your handling code here:
-    }                                           
-
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {
+        muda.LocalDescarte();
+    }
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {
+        muda.perfil();
+    }                                                                  
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {                                         
-        // TODO add your handling code here:
+        muda.Editar();
     }   
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {      
         String cpfString = jTextField3.getText();
         Local  pe = new Local();
         pe.pesquisa(cpfString,jTextField2, jTextField4, jTextField5, jTextField6, jTextField7, jTextField8, jTextField1);
         
-    }                                        
+    }    
+    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {                                            
+    }                                           
+                                    
 
     /**
      * @param args the command line arguments
