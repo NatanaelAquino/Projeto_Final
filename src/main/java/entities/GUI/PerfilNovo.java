@@ -66,6 +66,7 @@ public class PerfilNovo extends javax.swing.JFrame {
                 jButton4 = new javax.swing.JButton();
                 jButton5 = new javax.swing.JButton();
                 jButton8 = new javax.swing.JButton();
+                jButton9 = new javax.swing.JButton();
                 jLabel12 = new javax.swing.JLabel();
 
                 jRadioButton1.setText("jRadioButton1");
@@ -231,6 +232,23 @@ public class PerfilNovo extends javax.swing.JFrame {
                                 jButton4ActionPerformed(evt);
                         }
                 });
+                jButton9.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+                jButton9.setForeground(new java.awt.Color(255, 255, 255));
+                jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/resources/images/8.png"))); // NOI18N
+                jButton9.setText("Local de descarte");
+                jButton9.setBorder(null);
+                jButton9.setContentAreaFilled(false);
+                jButton9.setDoubleBuffered(true);
+                jButton9.setFocusCycleRoot(true);
+                jButton9.setFocusTraversalPolicyProvider(true);
+                jButton9.setHideActionText(true);
+                jButton9.setInheritsPopupMenu(true);
+                jButton9.setRequestFocusEnabled(false);
+                jButton9.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                jButton9ActionPerformed(evt);
+                        }
+                });
 
                 jButton5.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
                 jButton5.setForeground(new java.awt.Color(255, 255, 255));
@@ -311,6 +329,10 @@ public class PerfilNovo extends javax.swing.JFrame {
                                                                                                                                                 .addComponent(jButton2,
                                                                                                                                                                 javax.swing.GroupLayout.DEFAULT_SIZE,
                                                                                                                                                                 205,
+                                                                                                                                                                Short.MAX_VALUE)
+                                                                                                                                                .addComponent(jButton9,
+                                                                                                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                                                                                                                205,
                                                                                                                                                                 Short.MAX_VALUE)))))
                                                                                 .addGroup(kGradientPanel1Layout
                                                                                                 .createSequentialGroup()
@@ -340,6 +362,10 @@ public class PerfilNovo extends javax.swing.JFrame {
                                                                 .addPreferredGap(
                                                                                 javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                                                 .addComponent(jButton2,
+                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                26,
+                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addComponent(jButton9,
                                                                                 javax.swing.GroupLayout.PREFERRED_SIZE,
                                                                                 26,
                                                                                 javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -609,13 +635,14 @@ public class PerfilNovo extends javax.swing.JFrame {
         private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {
                 muda.Home();
         }
+        private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {
+                muda.LocalDescarte();
+        }
 
         private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
                 String cep = jTextField4.getText();
                 User user = new User();
                 user.consultCep(cep,jTextField8,jTextField9,jTextField7);
-
-
                 
         }
 
@@ -661,6 +688,7 @@ public class PerfilNovo extends javax.swing.JFrame {
         private javax.swing.JButton jButton5;
         private javax.swing.JButton jButton6;
         private javax.swing.JButton jButton8;
+        private javax.swing.JButton jButton9;
         private javax.swing.JLabel jLabel1;
         private javax.swing.JLabel jLabel10;
         private javax.swing.JLabel jLabel11;

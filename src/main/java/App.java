@@ -24,6 +24,6 @@ public class App {
 
 
     public static void main(String[] args) {
-        Local.setVisible(true);
+        login.setVisible(true);
     }
 }

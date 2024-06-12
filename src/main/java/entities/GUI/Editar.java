@@ -566,7 +566,7 @@ kGradientPanel1Layout.setVerticalGroup(
                 muda.perfil();
         }
         private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {
-                muda.perfil();
+                muda.LocalDescarte();
         }
 
         private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {

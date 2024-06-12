@@ -4,6 +4,8 @@
  */
 package main.java.entities.GUI;
 
+import java.awt.event.ActionEvent;
+
 import main.java.DAO.Local;
 import main.java.utils.Muda;
 
@@ -296,11 +298,7 @@ public class LocalDedescarte extends javax.swing.JFrame {
 
         jTextField2.setText("NOME");
 
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
-            }
-        });
+      
 
         jLabel1.setFont(new java.awt.Font("Segoe UI Black", 3, 18)); // NOI18N
         jLabel1.setText("Local de descarte: ");
@@ -343,6 +341,12 @@ public class LocalDedescarte extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
+        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField3ActionPerformed(evt);
+            }
+        });
+
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -457,11 +461,10 @@ public class LocalDedescarte extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>   
     
+
         Muda muda = new Muda();
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {
-        muda.Editar();
-    }
+    
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
         muda.desempenho();
@@ -488,11 +491,24 @@ public class LocalDedescarte extends javax.swing.JFrame {
         String cpfString = jTextField3.getText();
         Local  pe = new Local();
         pe.pesquisa(cpfString,jTextField2, jTextField4, jTextField5, jTextField6, jTextField7, jTextField8, jTextField1);
-        
     }    
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {  
+        
+        String cpfString = jTextField3.getText();//CERTO
+        String ciadade = jTextField1.getText(); 
+        String nome = jTextField2.getText();//CERTO
+        String uf = jTextField5.getText();//CERTO
+        String rua = jTextField6.getText();//CERTO
+        String numero = jTextField7.getText();//CERTO
+        String bairro = jTextField7.getText();
+        String cep = jTextField1.getText();//CERTO
+        Local salva = new Local(nome, cpfString, cep, uf, ciadade, bairro, rua, numero);
+        salva.salve();
+ 
+    }                                           
     private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {                                            
     }                                           
-                                    
+                                        
 
     /**
      * @param args the command line arguments

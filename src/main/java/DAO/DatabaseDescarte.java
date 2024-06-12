@@ -25,9 +25,8 @@ public class DatabaseDescarte {
         }
 
 
-        public DatabaseDescarte(Long quantidadeSTR, String nomeResiduo, String tipoResiduo, String tipoFase,
-                        String setor,
-                        String formaReciclagem, String comoDescartado, String descricaoDescarte) {
+        public DatabaseDescarte(Long quantidadeSTR, String nomeResiduo, String tipoResiduo,
+        String tipoFase,String setor,String formaReciclagem, String comoDescartado, String descricaoDescarte) {
                 this.quantidadeSTR = quantidadeSTR;
                 this.nomeResiduo = nomeResiduo;
                 this.tipoResiduo = tipoResiduo;

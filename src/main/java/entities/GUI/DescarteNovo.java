@@ -8,6 +8,7 @@ import javax.swing.JOptionPane;
 
 import main.java.App;
 import main.java.DAO.DatabaseDescarte;
+import main.java.DAO.Local;
 import main.java.utils.Muda;
 
 /**
@@ -23,7 +24,15 @@ public class DescarteNovo extends javax.swing.JFrame {
 
     public DescarteNovo() {
         initComponents();
+        preecnher();
     }
+    public void  preecnher(){
+        Local local = new Local();
+        local.preecnherLocal(jComboBox5);
+    }
+
+
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -268,8 +277,7 @@ public class DescarteNovo extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
         jLabel9.setText("Local de Descarte");
 
-        jComboBox5.setModel(
-                new javax.swing.DefaultComboBoxModel<>(new String[] { "Coleta Seletiva", "Aterro Sanitário", "Incinerado" }));
+       
 
         jLabel10.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
         jLabel10.setText("Descrição:");
