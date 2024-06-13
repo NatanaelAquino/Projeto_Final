@@ -133,7 +133,7 @@ public class LocalDedescarte extends javax.swing.JFrame {
         kGradientPanel1.setkStartColor(new java.awt.Color(102, 0, 102));
         kGradientPanel1.setOpaque(false);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/resources/images/logoP.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/resources/images/logoP.png")));  // NOI18N
 
         jButton2.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
@@ -191,7 +191,7 @@ public class LocalDedescarte extends javax.swing.JFrame {
 
         jButton5.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
         jButton5.setForeground(new java.awt.Color(255, 255, 255));
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/resources/images/stock.png"))); // NOI18N
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/resources/images/8.png"))); // NOI18N
         jButton5.setText("Local de Descarte");
         jButton5.setBorder(null);
         jButton5.setContentAreaFilled(false);

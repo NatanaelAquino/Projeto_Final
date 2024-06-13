@@ -228,7 +228,7 @@ public class DesempenhoNovo extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Configuraçoes  ");
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("B:\\Downloads\\Nova Logo (2).png")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/resources/images/logoP.png"))); // NOI18N
         jLabel2.setText("\n");
 
         javax.swing.GroupLayout kGradientPanel1Layout = new javax.swing.GroupLayout(kGradientPanel1);

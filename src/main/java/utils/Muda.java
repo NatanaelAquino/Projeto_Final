@@ -77,6 +77,10 @@ public class Muda {
         App.Criar.setVisible(true);
         App.login.setVisible(false);
     } 
+    public void Volta(){
+        App.Criar.setVisible(false);
+        App.login.setVisible(true);
+    } 
 
      
 }

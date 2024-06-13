@@ -1,4 +1,5 @@
 package main.java.entities;
+
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
@@ -12,6 +13,7 @@ import com.mysql.cj.xdevapi.DbDoc;
 import com.mysql.cj.xdevapi.JsonParser;
 import main.java.App;
 import main.java.utils.Conexao;
+import main.java.utils.Muda;
 
 public class User {
     private String name;
@@ -20,6 +22,7 @@ public class User {
     private String telefone;
     private String cep;
     private String uf;
+    private String bairro;
     private String cidade;
     private String numero;
     private String rua;
@@ -40,8 +43,30 @@ public class User {
         this.rua = rua;
     }
 
+    public User(String name, String email, String password, String telefone, String cep, String uf, String bairro,
+            String cidade, String numero, String rua) {
+        this.name = name;
+        this.email = email;
+        this.password = password;
+        this.telefone = telefone;
+        this.cep = cep;
+        this.uf = uf;
+        this.bairro = bairro;
+        this.cidade = cidade;
+        this.numero = numero;
+        this.rua = rua;
+    }
+
     public String getTelefone() {
         return telefone;
+    }
+
+    public String getBairro() {
+        return bairro;
+    }
+
+    public void setBairro(String bairro) {
+        this.bairro = bairro;
     }
 
     public void setTelefone(String telefone) {
@@ -112,7 +137,7 @@ public class User {
         this.password = password;
     }
 
-    public void consultCep(String cep,JTextField jTextField8 ,JTextField jTextField9 ,JTextField jTextField7) {
+    public void consultCep(String cep, JTextField jTextField8, JTextField jTextField9, JTextField jTextField7) {
         var client = HttpClient.newHttpClient();
         URI url = URI.create("https://viacep.com.br/ws/" + cep + "/json/");
         var request = HttpRequest.newBuilder(url).header("accept", "application/json").build();
@@ -120,11 +145,29 @@ public class User {
             var response = client.send(request, HttpResponse.BodyHandlers.ofString());
             System.out.println(response.body());
             DbDoc json = JsonParser.parseDoc(response.body());
-            jTextField7.setText(json.get("logradouro").toString().replaceAll("\"", "")  +  " "+json.get("bairro").toString().replaceAll("\"", "")  );
-            jTextField9.setText(json.get("localidade").toString().replaceAll("\"", "") );
-            jTextField8.setText(json.get("uf").toString().replaceAll("\"", "")  );
+            jTextField7.setText(json.get("logradouro").toString().replaceAll("\"", "")+ json.get("bairro").toString().replaceAll("\"", ""));
+            jTextField9.setText(json.get("localidade").toString().replaceAll("\"", ""));
+            jTextField8.setText(json.get("uf").toString().replaceAll("\"", ""));
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "CEP INVALIDO");
+        }
+    }
+
+    public void consultCepCria(String cep, JTextField jTextField8, JTextField jTextField6, JTextField jTextField11,
+            JTextField jTextField5) {
+       
+        try {
+            var client = HttpClient.newHttpClient();
+            URI url = URI.create("https://viacep.com.br/ws/" + cep + "/json/");
+            var request = HttpRequest.newBuilder(url).header("accept", "application/json").build();
+            var response = client.send(request, HttpResponse.BodyHandlers.ofString());
+            System.out.println(response.body());
+            DbDoc json = JsonParser.parseDoc(response.body());
+            jTextField8.setText(json.get("localidade").toString().replaceAll("\"", ""));
+            jTextField6.setText(json.get("logradouro").toString().replaceAll("\"", ""));
+            jTextField11.setText(json.get("bairro").toString().replaceAll("\"", ""));
+            jTextField5.setText(json.get(" uf").toString().replaceAll("\"", ""));
+        } catch (Exception e) {
         }
     }
 
@@ -155,6 +198,30 @@ public class User {
             } else {
                 System.out.println("Nenhuma linha foi atualizada.");
             }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void criarUsuario() {
+        String sql = "INSERT INTO USUARIO (Nome, Senha, Email, telefone, cep, uf, cidade, numero, rua) VALUES (?,?,?,?,?,?,?,?,?)";
+        PreparedStatement ps = null;
+        try {
+            ps = Conexao.getConnection().prepareStatement(sql);
+            ps.setString(1, name);
+            ps.setString(2, password);
+            ps.setString(3, email);
+            ps.setString(4, telefone);
+            ps.setString(5, cep);
+            ps.setString(6, uf);
+            ps.setString(7, cidade);
+            ps.setString(8, numero);
+            ps.setString(9, rua);
+            // Execute the statement
+            ps.executeUpdate();
+            Muda muda = new Muda();
+            muda.Volta();
+
         } catch (SQLException e) {
             e.printStackTrace();
         }

@@ -97,7 +97,7 @@ public class Login extends javax.swing.JFrame {
         kGradientPanel1.setkStartColor(new java.awt.Color(102, 0, 102));
         kGradientPanel1.setOpaque(false);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("B:\\Downloads\\Nova Logo.png")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/resources/images/10.png"))); // NOI18N
         jLabel2.setText("\n");
 
         javax.swing.GroupLayout kGradientPanel1Layout = new javax.swing.GroupLayout(kGradientPanel1);

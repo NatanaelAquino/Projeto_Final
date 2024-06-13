@@ -22,7 +22,6 @@ public class App {
     public static Criar Criar = new Criar();
     public static LocalDedescarte Local = new LocalDedescarte();
 
-
     public static void main(String[] args) {
         login.setVisible(true);
     }
