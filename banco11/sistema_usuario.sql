@@ -33,8 +33,9 @@ CREATE TABLE `usuario` (
   `cidade` varchar(100) DEFAULT NULL,
   `numero` varchar(10) DEFAULT NULL,
   `rua` varchar(100) DEFAULT NULL,
+  `bairro` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`idUsuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -43,7 +44,7 @@ CREATE TABLE `usuario` (
 
 LOCK TABLES `usuario` WRITE;
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
-INSERT INTO `usuario` VALUES (1,'','','','123','123','','','',''),(2,'Natanael','12','wedut62@gmail.com','35998275900','37561195','MG','Pouso Alegre','140','Rua Edison de Almeida Montes Residencial Morumbi II');
+INSERT INTO `usuario` VALUES (1,'','','','123','123','','','','',NULL),(2,'Natanael','12','wedut62@gmail.com','35998275900','37561195','MG','Pouso Alegre','140','Rua Edison de Almeida Montes Residencial Morumbi II',NULL),(3,'NOME','Senha','Senha','33333333','37561195','UF','Pouso Alegre','Numero','Rua Edison de Almeida Montes',NULL),(4,'NOME','Senha','Senha','33333333','37561195','UF','Pouso Alegre','Numero','Rua Edison de Almeida Montes',NULL),(5,'NOME','Senha','Senha','33333333','','UF','Bairro','Numero','Rua',NULL),(6,'NOME','Senha','Senha','33333333','','UF','Bairro','Numero','Rua',NULL),(7,'NOME','Senha','Senha','33333333','','UF','Bairro','Numero','Rua',NULL),(8,'NOME','Senha','Senha','33333333','','UF','Bairro','Numero','Rua',NULL),(9,'NOME','Senha','Senha','33333333','','UF','Bairro','Numero','Rua',NULL),(10,'NOME','Senha','Senha','33333333','','UF','Bairro','Numero','Rua',NULL),(11,'NOME','Senha','Senha','33333333','','UF','Bairro','Numero','Rua',NULL),(12,'NOME','Senha','Senha','33333333','','UF','Bairro','Numero','Rua',NULL),(13,'NOME','Senha','Senha','33333333','','UF','Bairro','Numero','Rua',NULL);
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -56,4 +57,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-06-12  0:00:15
+-- Dump completed on 2024-06-13 12:20:39
